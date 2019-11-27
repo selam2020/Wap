@@ -20,6 +20,11 @@ body{
     color:#404040 ;
     font-size: 11pt;
     font-family:  Georgia,Garamond,serif ;
+    background-image:url("myimages/silverware.jpg");
+    background-repeat:repeat-y;
+    background-position: center;
+    height: 750px;
+    background-size: cover;
 }
 a{
     color:  #A4A400 ;
