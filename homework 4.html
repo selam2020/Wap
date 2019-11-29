@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>new user signup</title>
+</head>
+<style>
+    form {
+        background-color: #DFDFFE;
+        text-align: left;
+        padding: 20x;
+        width: 400px;
+        border-radius: 10px;
+        border-top: 1px solid #E4E4E4;
+        border-left: 1px solid #E4E4E4;
+        border-right: 1px solid #1C1B1A;
+        border-bottom: 1px solid #1C1B1A;
+        position: absolute;
+        top: inherit;
+        top: 47px;
+        padding: 10px;
+
+    }
+
+    .submit {
+        background-color: #FFAAAA;
+    }
+
+    .title {
+            border-top: 1px solid #E4E4E4;
+            border-left: 1px solid #E4E4E4;
+            border-right: 1px solid #1C1B1A;
+            border-bottom: 1px solid #1C1B1A;
+            width: 150px;
+            padding: 5px;
+            text-align: center;
+            position: absolute;
+            z-index: 1000;
+            background-color: #ffff;
+            left: 25px;
+        /* margin-left: 25px; */
+
+    }
+
+    .dont {
+        color: red;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+</style>
+
+<body>
+
+    <p class="title"> New user signup : </p>
+
+    <form method="POST" action="signup-submit.php">
+        <table>
+            <tr>
+                <td> name :</td>
+                <td><input type='text' name="fullName" maxlength="16"> </td>
+            </tr>
+            <tr>
+                <td>
+                    gender:
+                </td>
+                <td>
+
+                    <input type="radio" name="gender" id="female" value="0" checked />
+                    <label for="female"> female </label>
+
+                    <input type="radio" name="gender" id="male" value="1" />
+                    <label for="male"> male </label>
+
+
+                </td>
+
+
+            </tr>
+            <tr>
+                <td> age :</td>
+                <td><input type='text' maxlength="2" size="6"></td>
+            </tr>
+            <tr>
+                <td> personality type :</td>
+
+                <td><input type='text' maxlength="4" size="6"> <a
+                        href="http://www.humanmetrics.com/cgi-win/JTypes2.asp .">
+                        ( <span class="dont"> Don't know your type </span>) </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td> favorite OS :</td>
+
+                <td>
+                    <select>
+                        <option selected>
+                            Window
+                        </option>
+                        <option>
+                            Mac
+                        </option>
+                        <option>
+                            OS
+                        </option>
+                        <option>
+                            X
+                        </option>
+                        <option>
+                            linux
+                        </option>
+                    </select>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td> Seeking age:</td>
+
+                <td><input type='text' name="min" placeholder="min">to <input name="max" type='text' placeholder="max"
+                        maxlength="2" size="6"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="submit" type="submit" value="signup">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+
+</body>
+
+</html>
