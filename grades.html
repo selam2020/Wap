@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Retrieve Grade</title>
+    <link href="grade.css" type=text/css rel="stylesheet">
+</head>
+
+<body>
+    <h1>Retrieve your grade</h1>
+    <div class="grade">
+        <form action="http://mumstudents.org/params.php" method="POST">
+            <table>
+                <tr>
+                    <td>student name</td>
+                    <td> <input type="text" name="studentname"></td>
+                </tr>
+                <tr>
+                    <td>student id</td>
+                    <td> <input type="text" name="Studentid"></td>
+                </tr>
+                <tr>
+                    <td>Assignment</td>
+                    <td> <select name="Assignment">
+                            <option value="hw1">
+                                homework1
+                            </option>
+                            <option value="hw2">
+                                homework2
+                            </option>
+                            <option value="hw3">
+                                homework3
+                            </option>
+                        </select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Entry</td>
+                    <td>
+                        <input type="radio" name="entry" value="aug" id="august" />
+                        <label for="august"> august</label>
+                        <input type="radio" value="feb" name="entry" id="february" />
+                        <label for="february"> february</label>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <label>
+                            I agree that i am only looking at my grades
+                        </label>
+                        <input type="checkbox" value="1" name="confirm">
+
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+
+                        <input type="submit" value="view my grades">
+                    </td>
+                </tr>
+    </div>
+
+    </table>
+    </form>
+    <a href="https://validator.w3.org/check?uri=referer">
+        <img src="myimages/html.png" alt="html validator" />
+    </a>
+
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+        <img src="myimages/css.png" alt="css validator" />
+    </a>
+</body>
+
+</html>
