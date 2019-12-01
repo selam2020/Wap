@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author 610594
+ * @author 
  */
 @WebServlet(urlPatterns = {"/Calculate"})
 public class Calculate extends HttpServlet {

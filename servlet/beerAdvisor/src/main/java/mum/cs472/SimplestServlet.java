@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author 610594
+ * 
  */
 @WebServlet(name="SimplestServlet", urlPatterns={"/Simplest"})
 public class SimplestServlet extends HttpServlet {

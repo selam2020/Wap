@@ -1,0 +1,25 @@
+1.What is the difference between a web server and a web container?
+
+A web container is purely devoted to running of servlets while a web server is involved in delivering web page data and resources, according to client requests. A web server runs several applications including a web container software. Therefore a web server is a super set, of which a web container is only a part.
+2.what is a servlet? 
+A servlet is a Java programming language class that is used to extend the capabilities of servers that host applications accessed by means of a request-response programming model. Although servlets can respond to any type of request, they are commonly used to extend the applications hosted by web servers
+
+3.How do web servers and web containers interact with servlets?
+• Servers that support servlets have as a helper app a servlet container.• When a request comes to the web server, if the server seesthe request is for a servlet, it passes the request data to theservlet container.• The servlet container locates the servlet, creates requestand response objects and passes them to the servlet, andreturns to the web server the response stream that theservlet produces.• The web server sends the response back to the clientbrowser to be rendered.
+4. Who creates request objects? Servlet container creates the request and response for servlet.
+5.What are the states in the servlet lifecycle?1. Servlet class is loaded.2. Servlet instance is created.3. init method is invoked.4. service method is invoked.     5.destroy method is invoked 
+6. Who calls init and when? It is called by the servlet container and called after instantiating the servlet
+7. Which of init, service, and doGet should you override? 
+We should override Both init and doget init and destroy, to manage resources that are held for the life of the servletdoGet, if the servlet supports HTTP GET requestsdoPost, for HTTP POST requests
+
+
+8.In what sense are servlets multi-threaded?When a request comes to web server initialize object once,the Servlets typically run on multithreaded servers, there is only one instance for a servlet and many user/many threads/many request may access the instance concurrently.with service() called for each request runs in a separate thread
+
+9. What are the implications of this for servlet instance variables? 
+Implies for the class servlet
+
+
+
+
+
+
