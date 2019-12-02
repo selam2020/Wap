@@ -1,0 +1,73 @@
+1. Can post requests be bookmarked? What are the problems?
+ POST cannot be bookmarked. Attempting to bookmark a POST will just result in a GET operation on the URL. 
+
+2. What is the purpose of request dispatching?
+A RequestDispatcher object can forward a client's request to a resource or include the resource itself in the response back to the client. A resource can be another servlet, or an HTML file, or a JSP file, etc. 
+
+3. What is the difference between redirect and request dispatch?
+
+Redirect dispatch is –
+server sends HTTP status code 3xx to client along with the redirect URL    (usually 302 temporary redirect)
+• client then sends a new request to the URL
+• extra round trip
+• address bar will change to new URL
+• only http message sent, request and response objects cannot be sent
+
+request dispatch is-
+• passes the request to another resource on the server
+• sometimes referred as “server side redirect“
+• request and response objects passed to destination servlet.
+• Browser is completely unaware of servlet forward and hence the URL in browser address bar will remain unchanged
+
+
+4. What is an attribute ?
+attribute in servlet is an object that can be set, get or removed from one of the following scopes:
+1.	request scope
+2.	session scope
+3.	application scope
+The servlet programmer can pass informations from one servlet to another using attributes. It is just like passing object from one class to another so that we can reuse the same object again and again.
+
+5. What is the difference between attributes and parameters?
+
+parameters are read only, attributes are read/write objects. 
+
+Parameters are String objects, attributes can be objects of any type.
+
+ 
+6. What are dangers of using attributes?
+Shared by every servlet and every request in the application
+Like nuclear power ,very powerful , have to be careful
+• Not thread safe
+• Nor session attributes
+• Only request attributes thread safe
+
+
+7. What does it mean to say that http is stateless? Give an example of a stateful protocol.
+HTTP is a stateless protocol,A stateless protocol does not require the server to retain information or status about each user for the duration of multiple requests.
+which means that the connection between the browser and the server is lost once the transaction ends.
+
+8. Give 5 different methods for maintaining state information (count each attribute scope as one
+method).
+Shared by every servlet and every request in the application
+Like nuclear power ,very powerful , have to be careful
+• Not thread safe
+• Nor session attributes
+• Only request attributes thread safe
+
+
+9. How long does a session last?
+destroyed when user closes browser.
+
+10. What is a cookie, and how long does a cookie last?
+A cookie is a small piece of information that is persisted between the multiple client requests.
+If cookies  temporary browser removes when it closes.
+permanent cookie • a cookie that has a max age set
+
+11. What is the purpose of URL rewriting?
+URL rewriting is the process of modifying Uniform Resource Locators (URLs) for various purposes.
+
+12. Why does the request attribute report ‘null’ for the maintaining state demo?
+Ans
+Null is returned if no attribute of the given name exist.
+
+
