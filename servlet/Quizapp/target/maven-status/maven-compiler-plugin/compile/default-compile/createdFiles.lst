@@ -1,0 +1,6 @@
+com\mycompany\quizapp\resources\JavaEE8Resource.class
+mum\quiz\QuizDb.class
+mum\quiz\quizsession.class
+com\mycompany\quizapp\JAXRSConfiguration.class
+mum\quiz\seesionServlet.class
+mum\quiz\Quiz.class
