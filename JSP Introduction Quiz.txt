@@ -1,0 +1,137 @@
+JSP Introduction Quiz 
+
+1.	What is the main value of Java Server Pages? 
+
+Ans-
+JavaServer Pages (JSP) are a technology for developing web pages that support dynamic content, allowing developers to insert java code in HTML pages by making use of special JSP tags, most of which start with <% and end with %>.
+
+
+2.	How are JSP pages related to servlets? 
+
+Ans-
+SERVLETS AS:
+1.	Servlet is a java class.
+2.	Servlet is a single instance multiple thread web application, In which HTML code can be included in java code.
+3.	In servlets the presentation logic and the B.logic is tightly coupled.
+4.	For every modification done in servlet program, we need to recompile and reload the application.
+5.	In servlets implicit objects are not available.
+6.	Servlets are supported to HTTP, FTP, and SMTP protocols.
+7.	Servlets are need Deployment Descriptor file (web.xml)
+JSP AS:
+1.	Jsp is a file.
+2.	In jsp java code can be included in HTML code by using special tags.
+3.	In jsp's the presentation logic and B.logic are separated by defining the java beans.
+4.	If any modifications done in jsp's without recompiling and reloading, the modifications are reflected.
+5.	In jsp's implicit objects are available which is we can implement directly into jsp pages.
+6.	Jsp are supported to HTTP protocol only.
+7.	No need of Deployment Descriptor file (web.xml) 
+
+
+3.	How are JSP pages related to HTML? 
+Ans-
+   insert java code in HTML pages by making use of special JSP tags, most of which start with <% and end with %>.
+1.	   A JSP page consists of HTML tags and JSP tags while HTML can only have html tags.
+2.	A JSP page can generate & contain dynamic information while regular HTML cannot.
+
+
+
+4.	Give an example of a JSP scriptlet and show how it will look in the JSP servlet .
+         Ans-
+
+   <%
+  String author = request.getParameter("author");
+  if (author != null && !author.equals(""))) { 
+%>
+    <p>You have choose author <%= author %></p>
+<%
+  }
+%>
+In the converted servlet, the above will be inserted into the service() method as follows:
+String author = request.getParameter("author");
+if (author != null && !author.equals(""))) {
+  out.write("<p>You have choose author ");
+  out.print( author );
+  out.write("</p>");
+}
+
+
+5.	Give an example of a JSP declaration and show how it will look in the JSP servlet.
+Ans-
+<%! private int count; %>
+<%! public int incrementCount() { ++count; } %> 
+will be translated to:
+public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
+      implements org.apache.jasper.runtime.JspSourceDependent {
+   
+   private int count;
+   public int incrementCount() { ++count; }
+  
+   public void _jspInit() { ...... }
+  
+   public void _jspDestroy() { ......  }
+
+   public void _jspService(HttpServletRequest request, HttpServletResponse response)
+         throws java.io.IOException, ServletException { ...... }
+}
+
+
+6.	Give an example of a JSP comment and show how it will look in the JSP servlet. 
+Ans-
+        <%-- JSP comments --%>
+
+              ignored by the JSP engine
+
+
+7.	Give an example of a JSP expression and show how it will look in the JSP servlet.
+Ans-
+<%= Math.sqrt(5) %>
+<%= item[10] %>
+<p>The current data and time is: <%= new java.util.Date() %></p>
+The above JSP expressions will be converted to:
+out.print( Math.sqrt(5) );
+out.print( item[10] );
+out.write("<p>Current time is: ");
+out.print( new java.util.Date() );
+out.write("</p>");
+
+8.	Give an example of a JSP directive and show how it will look in the JSP servlet. 
+Ans-
+<%page import =”packageName.className”>
+Translate in to Jsp servlet 
+     Import packageName.className;
+Placed at the top of the  class servlet
+
+
+9.	Explain how an EL expression is evaluated. 
+Ans-
+An EL expression is a compact expression of a systematic evaluation of the page, request, session and application scopes.
+           <  %= ((Person) request.getAttribute(“person”)).getDog().getName() %>
+
+           EL simplifies JSP expression syntax 
+           ${person.dog.name}
+
+
+
+
+10.Explain how servlet attributes are involved in EL expressions.
+Ans-
+EL simplifies JSP expression syntax 
+           ${person.dog.name}
+Translate in servlet
+Person per = (Person) request.getAttribute(“person”);
+out.println(per.dog.name);
+
+ 11. Explain how servlets and JSPs use request dispatch to interact. 
+  Ans-
+        <HTML>
+<HEAD> <TITLE> JSP Calling Servlet Demo </TITLE> </HEAD>
+<BODY>
+<!-- Forward processing to a servlet -->
+<% request.setAttribute("empid", "1234"); %>
+<jsp:include page="/servlet/MyServlet?user=Smith" flush="true"/>
+</BODY>
+</HTML>
+
+      request.setAttribute("username", "Smith");
+RequestDispatcher rd = sc.getRequestDispatcher("/jsp/mypage.jsp");
+
