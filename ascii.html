@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="ascii.css">
+    <script src="animation.js"></script>
+    <script src="ascii.js"></script>
+    <title>Asciimation</title>
+</head>
+<body>
+    <div class="top">
+            <h1 >CS472: ASCII Animation Viewer</h1>
+
+    </div>
+<div class="container">
+
+
+<div class="mytextbox">
+
+    <textarea name="" id="screen" cols="80" rows="20">
+
+    </textarea>
+</div>
+<div id="buttoncontainer">
+    <ul>
+        <li>
+            <fieldset>
+                <legend>Play Contorls:</legend>
+                <button id="start">Start</button>
+                <button id="stop">Stop</button>
+            </fieldset>
+        </li>
+        <li>
+            <fieldset>
+                <legend>Animation:</legend>
+                <select name="" id="choise">
+                    <option value="Blank" >Blank</option>
+                    <option value="Exercise">Exercise</option>
+                    <option value="Juggler">Juggler</option>
+                    <option value="Bike">Bike</option>
+                    <option value="Dive">Dive</option>
+                    <option value="Custom">Custom</option>
+                </select>
+            </fieldset>
+        </li>
+        <li>
+            <fieldset>
+                <legend>Size</legend>
+                <select name="" id="size">
+                        <option value="7" selected>Tiny </option>
+                        <option value="10">Small </option>
+                        <option value="16" selected>Medium</option>
+                        <option value="24">Large</option>
+                        <option value="32">Extra large</option>
+                    </select>
+            </fieldset>
+        </li>
+        <li>
+            <fieldset>
+                <legend>Speed:</legend>
+                <input type="checkbox" name="" id="turbo"> <label for="turbo">turbo</label>
+            </fieldset>
+        </li>
+    </ul>
+</div>
+</div>
+<div class="validators">
+        <a href="https://validator.w3.org/check?uri=referer">
+            <img src="myimages/html.png" alt="html validator" />
+        </a>
+        
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">
+            <img src="myimages/css.png" alt="css validator" />
+        </a>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">
+            <img src="myimages/css.png" alt="css validator" />
+        </a>
+</div>
+
+</body>
+</html>
