@@ -6,28 +6,28 @@ var a = 5;
 var b = 10;
 var c = function(a, b, c) {
 var x = 10;
-document.write(x);
-document.write(a);
+document.write(x);  10
+document.write(a);   8
 var f = function(a, b, c) {
 b = a;
-document.write(b);
+document.write(b);  8
 b = c;
 var x = 5;
 }
 f(a,b,c);
-document.write(b);
+document.write(b);  9
  }
 c(8,9,10);
-document.write(b);
-document.write(x);
+document.write(b);  10
+document.write(x);   1
 
        10,8,8,9,10,1
 
 
 2. What is the difference between a method and function?
 
-  a method is a function that belongs to a class. In JavaScript, however,
- a method is a function that belongs to an object.
+ a method is a function that belongs to a class. In JavaScript, however,
+ a function that belongs to an object.
  Everything in JavaScript is an object; a function is an object; an Array is an object.
 A JavaScript method is a property containing a function definition.
 

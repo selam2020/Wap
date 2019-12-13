@@ -6,23 +6,23 @@ x = 1;
 var a = 5;
 var b = 10;
 var c = function(a, b, c) {
-document.write(x);
-document.write(a);
+document.write(x);    undefined
+document.write(a);     8
 var f = function(a, b, c) {
 b = a;
-document.write(b);
+document.write(b);   8
 b = c;
 var x = 5;
 }
 f(a,b,c);
-document.write(b);
+document.write(b);   9
 var x = 10;
  }
 c(8,9,10);
-document.write(b);
-document.write(x);
+document.write(b);   10
+document.write(x);   1
 }
-  1,8,8,9,10,1  
+   
 
 2. Define Global Scope and Local Scope in Javascript.
 
@@ -68,7 +68,7 @@ var foo = 10;
 alert(foo);
 }
 bar();
-What will the alert print out? (Answer without running the code. Remember ‘hoisting’.)? 
+What will the alert print out? (Answer without running the code. Remember ï¿½hoistingï¿½.)? 
 
  outputof the alert is 10:
  
@@ -153,20 +153,101 @@ Private Method: getName( )
 Public Method: increaseSalary(percentage) // uses private getSalary( )
 Public Method: incrementAge( ) // uses private getAge( )
 
-11. Rewrite your answer to Question 10 using the Anonymous Object Literal Return Pattern.
+       var employee = 
+            (function(){
+	           //fields
+               let name;
+               let age;
+               let salary;
+                //getter & setter methods
+                let setAge = function(newAge){this.age = newAge};
+                let setSalary = function(newSalary){this.salary = newSalary};
+                let setName = function(newName){this.name = newName};
+                let getAge = function(){return this.age;};
+                let getSalary = function(){return this.salary;};
+                let getName = function(){return this.name;};
 
-12. Rewrite your answer to Question 10 using the Locally Scoped Object Literal Pattern.
+                //extra methods
+                let increaseSalary =  function(percentage){
+                                                   setSalary(getSalary()+(getSalary()*percentage))
+                                        };
+                let incrementAge =  function(){setAge(getAge()+1)};
+                return {
+                    setName : setName,
+                    setAge : setAge,
+                    setSalary: setSalary,
+                    increaseSalary : increaseSalary,
+                    incrementAge: incrementAge
+                };
 
-13. Write a few Javascript instructions to extend the Module of Question 10 to have a public address field and
-public methods setAddress(newAddress) and getAddress( ).
+	    	})();
 
+
+
+ 
+11.	Rewrite your answer to Question 10 using the Anonymous Object Literal Return Pattern. 
+Ans
+      var employee = 
+            (function(){
+               //fields
+               let name;
+               let age;
+               let salary;
+                //getter & setter methods
+                let getAge = function(){return age;};
+                let getSalary = function(){return salary;};
+                let getName = function(){return name;};
+                return {
+                    setName : function(newName){name = newName},
+                    setAge : function(newAge){age = newAge},
+                    setSalary: function(newSalary){salary = newSalary},
+                    increaseSalary : function(percentage){salary  = getSalary() + (getSalary()*percentage/100);},
+                    incrementAge: function(){age =getAge()+1;}
+                };
+
+            })();
+    
+
+ 
+12.	Rewrite your answer to Question 10 using the Locally Scoped Object Literal Pattern. 
+ Ans 
+var employee = 
+            (function(){
+               //fields
+               let name;
+               let age;
+               let salary;
+                //getter & setter methods
+                let getAge = function(){return age;};
+                let getSalary = function(){return salary;};
+                let getName = function(){return name;};
+                let empO = {};
+                empO.setName = function(newName){name = newName};
+                empO.setAge = function(newAge){age = newAge};
+                empO.setSalary = function(newSalary){salary = newSalary};
+                empO.increaseSalary = function(percentage){salary  = getSalary() + (getSalary()*percentage/100);};
+                empO.incrementAge = function(){age =getAge()+1;};
+                return empO;
+            })();
+
+ 
+13.	Write a few Javascript instructions to extend the Module of Question 10 to have a public address field and public methods setAddress(newAddress) and getAddress( ). 
+ Ans
+      employee.address = "";
+    employee.setAddress = function(newAddress){this.address =       newAddress;};
+    employee.getAddress = function(){return this.address;};
+
+
+
+
+ 
 
 14. What is the output of the following code?
 const promise = new Promise((resolve, reject) => {
-reject(“Hattori”);
+reject(ï¿½Hattoriï¿½);
 });
-promise.then(val => alert(“Success: “ + val))
- .catch(e => alert(“Error: “ + e));
+promise.then(val => alert(ï¿½Success: ï¿½ + val))
+ .catch(e => alert(ï¿½Error: ï¿½ + e));
 
 
 output =  Error: Hattori;
@@ -175,11 +256,11 @@ output =  Error: Hattori;
 15. What is the output of the following code?
 
 const promise = new Promise((resolve, reject) => {
-resolve(“Hattori”);
-setTimeout(()=> reject(“Yoshi”), 500);
+resolve(ï¿½Hattoriï¿½);
+setTimeout(()=> reject(ï¿½Yoshiï¿½), 500);
 });
-promise.then(val => alert(“Success: “ + val))
- .catch(e => alert(“Error: “ + e));
+promise.then(val => alert(ï¿½Success: ï¿½ + val))
+ .catch(e => alert(ï¿½Error: ï¿½ + e));
 
 output = Success:  Hattori;
 
