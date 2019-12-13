@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="j"> am here</h1>
+    <input type="password" id="password">
+    <button id="button">click me</button>
+    <script>
+
+
+        // var add = (function () {
+        //     var counter = 0;
+        //     function reset() {
+        //         counter = 0;
+        //         return 0;
+        //     }
+        //     function add() {
+        //         return counter += 1;
+        //     }
+        //     var count = {
+        //         add: add,
+        //         reset, reset
+        //     };
+        //     return count;
+
+        // })();
+
+
+
+//     const promise = new Promise((resolve, reject) => {
+//    reject("Hattori");
+//       });
+// promise.then(val => alert("Success: " + val))
+//  .catch(e => alert("Error: " + e));
+    
+
+
+
+
+
+
+        // var make_adder = (function (inc) {
+        //     var counter = 0;
+        //     return function add() {
+        //         counter += inc;
+        //         console.log(counter);
+        //         return counter;
+        //     }
+        // });
+
+        // var add5 = make_adder(5);
+        // add5(); add5(); add5(); add5();
+
+
+
+        function job(state) {
+ return new Promise(function(resolve, reject) {
+ if (state) {
+ resolve('success');
+ } else {
+ reject('error');
+ }
+ });
+}
+let promise = job(true);
+promise.then(function(data) {
+ console.log(data);
+ return job(false);})
+ .catch(function(error) {
+ console.log(error);
+ return 'Error caught';
+});
+
+var x= 3,y=4,z=5;
+  var max=  ()=> {return x>y||x>z?x:y>x||y>z?y:z
+    console.log (max)
+}
+
+
+
+
+
+
+
+    </script>

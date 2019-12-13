@@ -21,34 +21,35 @@ c(8,9,10);
 document.write(b);
 document.write(x);
 
+       10,8,8,9,10,1
+
 
 2. What is the difference between a method and function?
 
-     A function is a piece of code that is called by name. It can be passed data to operate on (i.e. the parameters)
-     and can optionally return data (the return value). All data that is passed to a function is explicitly passed.
-
-    A method is a piece of code that is called by a name that is associated with an object. In most respects it is identical to a function except
-    for two key differences:
-
-A method is implicitly passed the object on which it was called.
-A method is able to operate on data that is contained within the class 
-(remembering that an object is an instance of a class - the class is the definition, the object is an instance of that data).
+  a method is a function that belongs to a class. In JavaScript, however,
+ a method is a function that belongs to an object.
+ Everything in JavaScript is an object; a function is an object; an Array is an object.
+A JavaScript method is a property containing a function definition.
 
 
 3. What does 'this' refer to when used in a Java method?
 
-    “this “ refers the current object instantiated by class 
+    this refers the current object instantiated by class 
 
 4. What does 'this' refer to when used in a JavaScript method?
      
-       “this “ refers to the owner object
+  this refers to the "owner" of the function.    
 
 5. What does 'this' refer to when used in a JavaScript constructor function?
+The keyword this inside the constructor function points
+to the newly created object.
 
-       ‘this’ refers to the new object when the constructor is used to create the object. 
+
 
 6. Assume object x is the prototype for object y in Javascript. Object x has a method f( ) containing keyword 'this'.
 When f is called by x.f( ), what does 'this' refer to?
+
+'this' refers to x.
 
 
 7. What is a free variable in JavaScript?
@@ -71,12 +72,12 @@ Employee objects have the following fields: name, salary, position.
 function Employee(name,salary,position){
 
 this.name=name;
-this.salry=salry;
+this.salry=salary;
 this.position=position; 
 }
-var Employee1= new Employee("selam","100,000",developer)
-var Employee2= new Employee("yome","150,000",developer)
-var Employee3= new Employee("Jhone","200,000",developer)
+var Employee1= new Employee("selam","100,000","developer")
+var Employee2= new Employee("yome","300,000","developer")
+var Employee3= new Employee("Jhone","200,000","developer")
      
 10. Write a Javascript function that takes any number of input arguments and returns the product of the
 arguments.
@@ -90,6 +91,6 @@ arguments.
       }
 
 11. Write an arrow function that returns the maximum of its three input arguments.
-function findMax(){
 
-}
+
+var max=  ()=> {return x>y||x>z?x:y>x||y>z?y:z

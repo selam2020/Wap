@@ -12,12 +12,26 @@
   <!-- <button onclick="myFunc"> click me</button> -->
 
   <script>
-    function foo() {
-x = 4;
-console.log(x);
-} 
+    function Person(name, age, sex) {
+this.name = name;
+this.age = age;
+this.sex = sex;
+}
+var george = new Person("George Smith", 33, "M");
+var ken = new Person("Ken Jones", 39, "M");
 
-console.log(x);
+console.log(george);
+
+function Car(make, model, year, owner) {
+this.make = make;
+this.model = model;
+this.year = year;
+this.owner = owner;
+}
+var car1 = new Car("Toyota", "Camry", 1996, george);
+var car2 = new Car("Nissan", "Altima", 2016, ken);
+
+console.log(car1);
   </script>
 </body>
 
