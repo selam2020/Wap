@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-  <script>
-var b=1000;
-function g(){
-    var a=100;
-    b=10;
-    var z=a+b;
-    alert(z);
-    function f(z){
-        return 2*z;
-
-    }
-    var b=20;
-    alert (f(b))
-
-
-}
-g();
-alert(b);
-
-
-    </script>  
+    <script>
+        function Foo(bar) {
+            this.count = 0;
+            this.bar = bar;
+        }
+        var obj1 = new Foo(5);
+        console.log(obj1.count);
+        //obj1.increment();
+        Foo.prototype.increment = function () {
+            this.count++;
+        };
+        obj1.increment();
+        console.log(obj1.count);
+        var obj2 = new Foo(10);
+        console.log(obj2.count);
+        obj2.increment();
+        console.log(obj2.count);
+    </script>
 </body>
+
 </html>
